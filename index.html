@@ -28,7 +28,7 @@ a.sourceLine { text-indent: -1em; padding-left: 1em; }
 pre.numberSource a.sourceLine
   { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(title);
+  { content: attr(data-line-number);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
     border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
@@ -536,6 +536,7 @@ Simon Frost
 <li>James Lester</li>
 <li>Gerry Tonkin-Hill</li>
 </ul></li>
+<li>All the participants of the 2018 meeting</li>
 </ul>
 </div>
 <div class="right">
@@ -550,7 +551,10 @@ Simon Frost
 <ul>
 <li>Jade Thompson</li>
 </ul></li>
-<li>All the participants of the 2018 meeting</li>
+<li>Western University
+<ul>
+<li>Art Poon</li>
+</ul></li>
 </ul>
 </div>
 </section>
@@ -814,40 +818,40 @@ Simon Frost
 <h2>R vs Python</h2>
 <div>
 <div class="left">
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1">sir_ode &lt;-<span class="st"> </span><span class="cf">function</span>(times,init,parms){</a>
-<a class="sourceLine" id="cb1-2" title="2">  <span class="kw">with</span>(<span class="kw">as.list</span>(<span class="kw">c</span>(parms,init)), {</a>
-<a class="sourceLine" id="cb1-3" title="3">  <span class="co"># ODEs</span></a>
-<a class="sourceLine" id="cb1-4" title="4">  dS &lt;-<span class="st"> </span><span class="op">-</span>beta<span class="op">*</span>S<span class="op">*</span>I</a>
-<a class="sourceLine" id="cb1-5" title="5">  dI &lt;-<span class="st"> </span>beta<span class="op">*</span>S<span class="op">*</span>I<span class="op">-</span>gamma<span class="op">*</span>I</a>
-<a class="sourceLine" id="cb1-6" title="6">  dR &lt;-<span class="st"> </span>gamma<span class="op">*</span>I</a>
-<a class="sourceLine" id="cb1-7" title="7">  <span class="kw">list</span>(<span class="kw">c</span>(dS,dI,dR))</a>
-<a class="sourceLine" id="cb1-8" title="8">  })</a>
-<a class="sourceLine" id="cb1-9" title="9">}</a>
-<a class="sourceLine" id="cb1-10" title="10">parms &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dt">beta=</span><span class="fl">0.1</span>,<span class="dt">gamma=</span><span class="fl">0.05</span>)</a>
-<a class="sourceLine" id="cb1-11" title="11">init &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dt">S=</span><span class="fl">0.99</span>,<span class="dt">I=</span><span class="fl">0.01</span>,<span class="dt">R=</span><span class="dv">0</span>) </a>
-<a class="sourceLine" id="cb1-12" title="12">times &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">200</span>,<span class="dt">length.out=</span><span class="dv">2001</span>)</a>
-<a class="sourceLine" id="cb1-13" title="13">sir_out &lt;-<span class="st"> </span><span class="kw">lsoda</span>(init,</a>
-<a class="sourceLine" id="cb1-14" title="14">                 times,</a>
-<a class="sourceLine" id="cb1-15" title="15">                 sir_ode,</a>
-<a class="sourceLine" id="cb1-16" title="16">                 parms)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">sir_ode &lt;-<span class="st"> </span><span class="cf">function</span>(times,init,parms){</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">  <span class="kw">with</span>(<span class="kw">as.list</span>(<span class="kw">c</span>(parms,init)), {</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">  <span class="co"># ODEs</span></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">  dS &lt;-<span class="st"> </span><span class="op">-</span>beta<span class="op">*</span>S<span class="op">*</span>I</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">  dI &lt;-<span class="st"> </span>beta<span class="op">*</span>S<span class="op">*</span>I<span class="op">-</span>gamma<span class="op">*</span>I</a>
+<a class="sourceLine" id="cb1-6" data-line-number="6">  dR &lt;-<span class="st"> </span>gamma<span class="op">*</span>I</a>
+<a class="sourceLine" id="cb1-7" data-line-number="7">  <span class="kw">list</span>(<span class="kw">c</span>(dS,dI,dR))</a>
+<a class="sourceLine" id="cb1-8" data-line-number="8">  })</a>
+<a class="sourceLine" id="cb1-9" data-line-number="9">}</a>
+<a class="sourceLine" id="cb1-10" data-line-number="10">parms &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dt">beta=</span><span class="fl">0.1</span>,<span class="dt">gamma=</span><span class="fl">0.05</span>)</a>
+<a class="sourceLine" id="cb1-11" data-line-number="11">init &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dt">S=</span><span class="fl">0.99</span>,<span class="dt">I=</span><span class="fl">0.01</span>,<span class="dt">R=</span><span class="dv">0</span>) </a>
+<a class="sourceLine" id="cb1-12" data-line-number="12">times &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">200</span>,<span class="dt">length.out=</span><span class="dv">2001</span>)</a>
+<a class="sourceLine" id="cb1-13" data-line-number="13">sir_out &lt;-<span class="st"> </span><span class="kw">lsoda</span>(init,</a>
+<a class="sourceLine" id="cb1-14" data-line-number="14">                 times,</a>
+<a class="sourceLine" id="cb1-15" data-line-number="15">                 sir_ode,</a>
+<a class="sourceLine" id="cb1-16" data-line-number="16">                 parms)</a></code></pre></div>
 </div>
 <div class="right">
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">def</span> sir_ode(times,init,parms):</a>
-<a class="sourceLine" id="cb2-2" title="2">    b, g <span class="op">=</span> parms</a>
-<a class="sourceLine" id="cb2-3" title="3">    S,I,R <span class="op">=</span> init</a>
-<a class="sourceLine" id="cb2-4" title="4">    <span class="co"># ODEs</span></a>
-<a class="sourceLine" id="cb2-5" title="5">    dS <span class="op">=</span> <span class="op">-</span>b<span class="op">*</span>S<span class="op">*</span>I</a>
-<a class="sourceLine" id="cb2-6" title="6">    dI <span class="op">=</span> b<span class="op">*</span>S<span class="op">*</span>I<span class="op">-</span>g<span class="op">*</span>I</a>
-<a class="sourceLine" id="cb2-7" title="7">    dR <span class="op">=</span> g<span class="op">*</span>I</a>
-<a class="sourceLine" id="cb2-8" title="8">    <span class="cf">return</span> [dS,dI,dR]</a>
-<a class="sourceLine" id="cb2-9" title="9">parms <span class="op">=</span> [<span class="fl">0.1</span>,<span class="fl">0.05</span>]</a>
-<a class="sourceLine" id="cb2-10" title="10">init <span class="op">=</span> [<span class="fl">0.99</span>,<span class="fl">0.01</span>,<span class="dv">0</span>]</a>
-<a class="sourceLine" id="cb2-11" title="11">times <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">200</span>,<span class="dv">2001</span>)</a>
-<a class="sourceLine" id="cb2-12" title="12">sir_sol <span class="op">=</span> solve_ivp(</a>
-<a class="sourceLine" id="cb2-13" title="13">    fun<span class="op">=</span><span class="kw">lambda</span> t, y: sir_ode(t, y, parms),</a>
-<a class="sourceLine" id="cb2-14" title="14">    t_span<span class="op">=</span>[<span class="bu">min</span>(times),<span class="bu">max</span>(times)],</a>
-<a class="sourceLine" id="cb2-15" title="15">    y0<span class="op">=</span>init,</a>
-<a class="sourceLine" id="cb2-16" title="16">    t_eval<span class="op">=</span>times)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">def</span> sir_ode(times,init,parms):</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">    b, g <span class="op">=</span> parms</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">    S,I,R <span class="op">=</span> init</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">    <span class="co"># ODEs</span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">    dS <span class="op">=</span> <span class="op">-</span>b<span class="op">*</span>S<span class="op">*</span>I</a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">    dI <span class="op">=</span> b<span class="op">*</span>S<span class="op">*</span>I<span class="op">-</span>g<span class="op">*</span>I</a>
+<a class="sourceLine" id="cb2-7" data-line-number="7">    dR <span class="op">=</span> g<span class="op">*</span>I</a>
+<a class="sourceLine" id="cb2-8" data-line-number="8">    <span class="cf">return</span> [dS,dI,dR]</a>
+<a class="sourceLine" id="cb2-9" data-line-number="9">parms <span class="op">=</span> [<span class="fl">0.1</span>,<span class="fl">0.05</span>]</a>
+<a class="sourceLine" id="cb2-10" data-line-number="10">init <span class="op">=</span> [<span class="fl">0.99</span>,<span class="fl">0.01</span>,<span class="dv">0</span>]</a>
+<a class="sourceLine" id="cb2-11" data-line-number="11">times <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">200</span>,<span class="dv">2001</span>)</a>
+<a class="sourceLine" id="cb2-12" data-line-number="12">sir_sol <span class="op">=</span> solve_ivp(</a>
+<a class="sourceLine" id="cb2-13" data-line-number="13">    fun<span class="op">=</span><span class="kw">lambda</span> t, y: sir_ode(t, y, parms),</a>
+<a class="sourceLine" id="cb2-14" data-line-number="14">    t_span<span class="op">=</span>[<span class="bu">min</span>(times),<span class="bu">max</span>(times)],</a>
+<a class="sourceLine" id="cb2-15" data-line-number="15">    y0<span class="op">=</span>init,</a>
+<a class="sourceLine" id="cb2-16" data-line-number="16">    t_eval<span class="op">=</span>times)</a></code></pre></div>
 </div>
 </div>
 </section>
@@ -929,56 +933,56 @@ y \tilde \rm{binomial}(I,1-e^{-\gamma \delta t}) \\
 </section>
 <section id="r-code" class="slide level2">
 <h2>R code</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">sir &lt;-<span class="st"> </span><span class="cf">function</span>(t,u,parms){</a>
-<a class="sourceLine" id="cb3-2" title="2">  <span class="kw">with</span>(<span class="kw">c</span>(u,parms),{</a>
-<a class="sourceLine" id="cb3-3" title="3">    lambd &lt;-<span class="st"> </span>bet<span class="op">*</span>(I <span class="op">+</span><span class="st"> </span>iota)<span class="op">/</span>N</a>
-<a class="sourceLine" id="cb3-4" title="4">    ifrac &lt;-<span class="st"> </span><span class="fl">1.0</span> <span class="op">-</span><span class="st"> </span><span class="kw">exp</span>(<span class="op">-</span>lambd<span class="op">*</span>dt)</a>
-<a class="sourceLine" id="cb3-5" title="5">    rfrac &lt;-<span class="st"> </span><span class="fl">1.0</span> <span class="op">-</span><span class="st"> </span><span class="kw">exp</span>(<span class="op">-</span>gamm<span class="op">*</span>dt)</a>
-<a class="sourceLine" id="cb3-6" title="6">    infection &lt;-<span class="st"> </span><span class="kw">rbinom</span>(<span class="dv">1</span>,S,ifrac)</a>
-<a class="sourceLine" id="cb3-7" title="7">    recovery &lt;-<span class="st"> </span><span class="kw">rbinom</span>(<span class="dv">1</span>,I,rfrac)</a>
-<a class="sourceLine" id="cb3-8" title="8">    <span class="kw">return</span>(<span class="kw">list</span>(<span class="dt">S=</span>S<span class="op">-</span>infection,</a>
-<a class="sourceLine" id="cb3-9" title="9">                <span class="dt">I=</span>I<span class="op">+</span>infection<span class="op">-</span>recovery,</a>
-<a class="sourceLine" id="cb3-10" title="10">                <span class="dt">R=</span>R<span class="op">+</span>recovery,</a>
-<a class="sourceLine" id="cb3-11" title="11">                <span class="dt">Y=</span>Y<span class="op">+</span>infection))</a>
-<a class="sourceLine" id="cb3-12" title="12">  })</a>
-<a class="sourceLine" id="cb3-13" title="13">}</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">sir &lt;-<span class="st"> </span><span class="cf">function</span>(t,u,parms){</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">  <span class="kw">with</span>(<span class="kw">c</span>(u,parms),{</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">    lambd &lt;-<span class="st"> </span>bet<span class="op">*</span>(I <span class="op">+</span><span class="st"> </span>iota)<span class="op">/</span>N</a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">    ifrac &lt;-<span class="st"> </span><span class="fl">1.0</span> <span class="op">-</span><span class="st"> </span><span class="kw">exp</span>(<span class="op">-</span>lambd<span class="op">*</span>dt)</a>
+<a class="sourceLine" id="cb3-5" data-line-number="5">    rfrac &lt;-<span class="st"> </span><span class="fl">1.0</span> <span class="op">-</span><span class="st"> </span><span class="kw">exp</span>(<span class="op">-</span>gamm<span class="op">*</span>dt)</a>
+<a class="sourceLine" id="cb3-6" data-line-number="6">    infection &lt;-<span class="st"> </span><span class="kw">rbinom</span>(<span class="dv">1</span>,S,ifrac)</a>
+<a class="sourceLine" id="cb3-7" data-line-number="7">    recovery &lt;-<span class="st"> </span><span class="kw">rbinom</span>(<span class="dv">1</span>,I,rfrac)</a>
+<a class="sourceLine" id="cb3-8" data-line-number="8">    <span class="kw">return</span>(<span class="kw">list</span>(<span class="dt">S=</span>S<span class="op">-</span>infection,</a>
+<a class="sourceLine" id="cb3-9" data-line-number="9">                <span class="dt">I=</span>I<span class="op">+</span>infection<span class="op">-</span>recovery,</a>
+<a class="sourceLine" id="cb3-10" data-line-number="10">                <span class="dt">R=</span>R<span class="op">+</span>recovery,</a>
+<a class="sourceLine" id="cb3-11" data-line-number="11">                <span class="dt">Y=</span>Y<span class="op">+</span>infection))</a>
+<a class="sourceLine" id="cb3-12" data-line-number="12">  })</a>
+<a class="sourceLine" id="cb3-13" data-line-number="13">}</a></code></pre></div>
 <ul>
 <li>Time for 1000 replicates: 7.5s</li>
 </ul>
 </section>
 <section id="python-code" class="slide level2">
 <h2>Python code</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">def</span> sir(t,u,parms):</a>
-<a class="sourceLine" id="cb4-2" title="2">    bet,gamm,iota,N,dt<span class="op">=</span>parms</a>
-<a class="sourceLine" id="cb4-3" title="3">    S,I,R,Y<span class="op">=</span>u</a>
-<a class="sourceLine" id="cb4-4" title="4">    lambd <span class="op">=</span> bet<span class="op">*</span>(I<span class="op">+</span>iota)<span class="op">/</span>N</a>
-<a class="sourceLine" id="cb4-5" title="5">    ifrac <span class="op">=</span> <span class="fl">1.0</span> <span class="op">-</span> math.exp(<span class="op">-</span>lambd<span class="op">*</span>dt)</a>
-<a class="sourceLine" id="cb4-6" title="6">    rfrac <span class="op">=</span> <span class="fl">1.0</span> <span class="op">-</span> math.exp(<span class="op">-</span>gamm<span class="op">*</span>dt)</a>
-<a class="sourceLine" id="cb4-7" title="7">    infection <span class="op">=</span> np.random.binomial(S,ifrac)</a>
-<a class="sourceLine" id="cb4-8" title="8">    recovery <span class="op">=</span> np.random.binomial(I,rfrac)</a>
-<a class="sourceLine" id="cb4-9" title="9">    <span class="cf">return</span> [S<span class="op">-</span>infection,</a>
-<a class="sourceLine" id="cb4-10" title="10">            I<span class="op">+</span>infection<span class="op">-</span>recovery,</a>
-<a class="sourceLine" id="cb4-11" title="11">            R<span class="op">+</span>recovery,</a>
-<a class="sourceLine" id="cb4-12" title="12">            Y<span class="op">+</span>infection]</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">def</span> sir(t,u,parms):</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">    bet,gamm,iota,N,dt<span class="op">=</span>parms</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">    S,I,R,Y<span class="op">=</span>u</a>
+<a class="sourceLine" id="cb4-4" data-line-number="4">    lambd <span class="op">=</span> bet<span class="op">*</span>(I<span class="op">+</span>iota)<span class="op">/</span>N</a>
+<a class="sourceLine" id="cb4-5" data-line-number="5">    ifrac <span class="op">=</span> <span class="fl">1.0</span> <span class="op">-</span> math.exp(<span class="op">-</span>lambd<span class="op">*</span>dt)</a>
+<a class="sourceLine" id="cb4-6" data-line-number="6">    rfrac <span class="op">=</span> <span class="fl">1.0</span> <span class="op">-</span> math.exp(<span class="op">-</span>gamm<span class="op">*</span>dt)</a>
+<a class="sourceLine" id="cb4-7" data-line-number="7">    infection <span class="op">=</span> np.random.binomial(S,ifrac)</a>
+<a class="sourceLine" id="cb4-8" data-line-number="8">    recovery <span class="op">=</span> np.random.binomial(I,rfrac)</a>
+<a class="sourceLine" id="cb4-9" data-line-number="9">    <span class="cf">return</span> [S<span class="op">-</span>infection,</a>
+<a class="sourceLine" id="cb4-10" data-line-number="10">            I<span class="op">+</span>infection<span class="op">-</span>recovery,</a>
+<a class="sourceLine" id="cb4-11" data-line-number="11">            R<span class="op">+</span>recovery,</a>
+<a class="sourceLine" id="cb4-12" data-line-number="12">            Y<span class="op">+</span>infection]</a></code></pre></div>
 <ul>
 <li>Time: 1.8s</li>
 </ul>
 </section>
 <section id="julia-code" class="slide level2">
 <h2>Julia code</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode julia"><code class="sourceCode julia"><a class="sourceLine" id="cb5-1" title="1">@inline @fastmath <span class="kw">function</span> sir(t, u, parms, rng)</a>
-<a class="sourceLine" id="cb5-2" title="2">    (S, I, R, Y) = u</a>
-<a class="sourceLine" id="cb5-3" title="3">    (β, γ, ι, N, δt) = parms</a>
-<a class="sourceLine" id="cb5-4" title="4">    λ = β * (I + ι) / N</a>
-<a class="sourceLine" id="cb5-5" title="5">    ifrac = <span class="fl">1.0</span> - exp(-λ * δt)</a>
-<a class="sourceLine" id="cb5-6" title="6">    rfrac = <span class="fl">1.0</span> - exp(-γ * δt)</a>
-<a class="sourceLine" id="cb5-7" title="7">    infection = randbn(S, ifrac, rng)</a>
-<a class="sourceLine" id="cb5-8" title="8">    recovery = randbn(I, rfrac, rng)</a>
-<a class="sourceLine" id="cb5-9" title="9">    <span class="kw">return</span> (S - infection,</a>
-<a class="sourceLine" id="cb5-10" title="10">            I + infection - recovery,</a>
-<a class="sourceLine" id="cb5-11" title="11">            R + recovery,</a>
-<a class="sourceLine" id="cb5-12" title="12">            Y + infection)</a>
-<a class="sourceLine" id="cb5-13" title="13"><span class="kw">end</span></a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode julia"><code class="sourceCode julia"><a class="sourceLine" id="cb5-1" data-line-number="1">@inline @fastmath <span class="kw">function</span> sir(t, u, parms, rng)</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">    (S, I, R, Y) = u</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">    (β, γ, ι, N, δt) = parms</a>
+<a class="sourceLine" id="cb5-4" data-line-number="4">    λ = β * (I + ι) / N</a>
+<a class="sourceLine" id="cb5-5" data-line-number="5">    ifrac = <span class="fl">1.0</span> - exp(-λ * δt)</a>
+<a class="sourceLine" id="cb5-6" data-line-number="6">    rfrac = <span class="fl">1.0</span> - exp(-γ * δt)</a>
+<a class="sourceLine" id="cb5-7" data-line-number="7">    infection = randbn(S, ifrac, rng)</a>
+<a class="sourceLine" id="cb5-8" data-line-number="8">    recovery = randbn(I, rfrac, rng)</a>
+<a class="sourceLine" id="cb5-9" data-line-number="9">    <span class="kw">return</span> (S - infection,</a>
+<a class="sourceLine" id="cb5-10" data-line-number="10">            I + infection - recovery,</a>
+<a class="sourceLine" id="cb5-11" data-line-number="11">            R + recovery,</a>
+<a class="sourceLine" id="cb5-12" data-line-number="12">            Y + infection)</a>
+<a class="sourceLine" id="cb5-13" data-line-number="13"><span class="kw">end</span></a></code></pre></div>
 <ul>
 <li>Time: 0.03s</li>
 </ul>
@@ -1058,7 +1062,7 @@ init2 = [0.99 ± 0.0,0.01 ± 0.0 ,0.0 ± 0.0]</code></pre>
 <li>Creative Commons CC-BY 4.0 (text)</li>
 </ul></li>
 </ul></li>
-<li>Group publication:
+<li>Group publication?:
 <ul>
 <li>Journal of Open Source Education</li>
 <li>F1000 Research</li>
@@ -1111,23 +1115,72 @@ init2 = [0.99 ± 0.0,0.01 ± 0.0 ,0.0 ± 0.0]</code></pre>
 <section id="next-steps" class="slide level2">
 <h2>Next steps</h2>
 <ul>
-<li>First release of the cookbook
+<li>Complete assimilation of examples from the workshop</li>
+<li>More examples!</li>
+<li>First release of the cookbook</li>
+<li>Future hackathons</li>
+<li>Engineering
 <ul>
-<li>Provide a Digital Object Identifier for citation purposes</li>
+<li>More interfaces (RStudio, Iodide, Shiny, Stencila)</li>
+<li>More scalable infrastructure</li>
 </ul></li>
-<li>Future hackathons
+</ul>
+</section>
+<section id="bjornstad-2018" class="slide level2">
+<h2>Bjornstad (2018)</h2>
+<div class="left">
+<p><img data-src="img/bjornstad18.jpg" style="width:60.0%" /></p>
+</div>
+<div class="right">
 <ul>
-<li>More of the same</li>
-<li>Agent based models/discrete event simulations</li>
-<li>Inference</li>
+<li>Many examples in R</li>
+<li>Ottar kindly sent me the source code for the book</li>
+<li>Integration of the examples is currently underway</li>
+</ul>
+</div>
+</section>
+<section id="other-backends" class="slide level2">
+<h2>Other backends</h2>
+<ul>
+<li>Iodide
+<ul>
+<li>Another web notebook like Observable</li>
+<li>Supports Javascript, Python, etc.</li>
+<li>Fully open source</li>
 </ul></li>
-<li>More scalable backend</li>
+<li>Stencila
+<ul>
+<li>Word-processor style</li>
+<li>Supports R, Python, Javascript, SQL</li>
+</ul></li>
+</ul>
+</section>
+<section id="further-support" class="slide level2">
+<h2>Further support</h2>
+<ul>
+<li>Long-listed for another workshop funded by The Alan Turing Institute</li>
+<li>May apply for ICMS on a more research-focused activity: cutting-edge models?</li>
+<li>Wellcome Open Science Prize</li>
+</ul>
+</section>
+<section id="analysing-case-onset-data" class="slide level2">
+<h2>Analysing case onset data</h2>
+<ul>
+<li>Infectious disease data are increasingly published online as ‘situation reports’ or ‘sitreps’, which include case onset data, aggregated by time period, and sometimes spatial region and/or population subgroup</li>
+<li>Thibaut Jombart (Imperial/LSHTM) and I set up a repository of these data, <code>outbreaks</code></li>
+<li>There are <em>many</em> methods to analyse these data, but…
+<ul>
+<li>They have not been tested against a variety of datasets</li>
+<li>Implementations are scattered on the WWW</li>
+<li>Documentation/examples are often lacking</li>
+</ul></li>
 </ul>
 </section>
 <section id="conclusions" class="slide level2">
 <h2>Conclusions</h2>
 <ul>
 <li>After only a single hackathon, Epirecipes already contains a wide range of models in a variety of languages</li>
+<li>Easily deployable platform for reproducible simulation of biological systems</li>
 <li>Much to be done!
 <ul>
 <li>Growing the community</li>

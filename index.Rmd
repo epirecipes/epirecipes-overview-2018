@@ -40,7 +40,8 @@ suppressPackageStartupMessages(library(ggplot2))
     - Thibaut Jombart
     - James Lester
     - Gerry Tonkin-Hill
-    
+- All the participants of the 2018 meeting
+
 </div>
 
 <div class="right">
@@ -51,8 +52,8 @@ suppressPackageStartupMessages(library(ggplot2))
     - Prof. James Wood
 - ATI
     - Jade Thompson
-- All the participants of the 2018 meeting
-
+- Western University
+    - Art Poon
 </div>
 
 ## Sponsors
@@ -512,7 +513,7 @@ init2 = [0.99 ± 0.0,0.01 ± 0.0 ,0.0 ± 0.0]
     - Licensing:
         - MIT (code)
         - Creative Commons CC-BY 4.0 (text)
-- Group publication:
+- Group publication?:
     - Journal of Open Source Education
     - F1000 Research
 
@@ -557,17 +558,59 @@ init2 = [0.99 ± 0.0,0.01 ± 0.0 ,0.0 ± 0.0]
 
 ## Next steps
 
+- Complete assimilation of examples from the workshop
+- More examples!
 - First release of the cookbook
-    - Provide a Digital Object Identifier for citation purposes
 - Future hackathons
-    - More of the same
-    - Agent based models/discrete event simulations
-    - Inference
-- More scalable backend
+- Engineering
+    - More interfaces (RStudio, Iodide, Shiny, Stencila)
+    - More scalable infrastructure
+
+## Bjornstad (2018)
+
+<div class="left">
+
+![](img/bjornstad18.jpg){width="60%"}
+
+</div>
+
+<div class="right">
+
+- Many examples in R
+- Ottar kindly sent me the source code for the book
+- Integration of the examples is currently underway
+
+</div>
+
+## Other backends
+
+- Iodide
+    - Another web notebook like Observable
+    - Supports Javascript, Python, etc.
+    - Fully open source
+- Stencila
+    - Word-processor style
+    - Supports R, Python, Javascript, SQL
+
+## Further support
+
+- Long-listed for another workshop funded by The Alan Turing Institute
+- May apply for ICMS on a more research-focused activity: cutting-edge models?
+- Wellcome Open Science Prize
+
+## Analysing case onset data
+
+- Infectious disease data are increasingly published online as 'situation reports' or 'sitreps', which include case onset data, aggregated by time period, and sometimes spatial region and/or population subgroup
+- Thibaut Jombart (Imperial/LSHTM) and I set up a repository of these data, `outbreaks`
+- There are *many* methods to analyse these data, but...
+    - They have not been tested against a variety of datasets
+    - Implementations are scattered on the WWW
+    - Documentation/examples are often lacking
 
 ## Conclusions
 
 - After only a single hackathon, Epirecipes already contains a wide range of models in a variety of languages
+- Easily deployable platform for reproducible simulation of biological systems
 - Much to be done!
     - Growing the community
 
